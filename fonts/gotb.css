@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'GothamNarrowBold';
+    src: url('gotb.eot');
+    src: url('gotb.eot') format('embedded-opentype'),
+         url('gotb.woff') format('woff'),
+         url('gotb.ttf') format('truetype'),
+         url('gotb.svg#GothamNarrowBold') format('svg');
+}

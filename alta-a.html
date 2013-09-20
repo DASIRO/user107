@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>    	
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>PROYECTO-HOME</title>
+        <link href="estilos.css" rel="stylesheet" type="text/css" />		                
+    </head>
+    <body>
+
+		
+			<div class="contenedor" style="height:960px; background-image:url(img/fondo.png); background-repeat:no-repeat; background-position:bottom left">	
+			<div class="sombra_izq"></div>
+			<div class="sombra_der"></div>	  	
+			<div class="top1">  		
+				<div class="topmenu">
+					<p><a href="#"><span style="color:#000">› </span>CERRAR SESIÓN</a></p>
+					<p><a href="#"><span style="color:#000">› </span>INICIO</a></p>
+				</div>        		
+			</div>
+				<div class="menu">
+					<ul><?php 
+					if($_SESSION["puesto"]== "MAESTRO"){?>
+					  <li><a href="#"><span style="color:#F00">› </span>CICLOS ESCOLARES</a>
+						<ul>
+						  <li><a href="#"><p align=left>ALTA/BAJA/MODIFICA</p></a></li>		  
+						</ul>
+					  </li><?php }
+					if($_SESSION["puesto"]== "MAESTRO"){?>
+					  <li><a href="#"><span style="color:#F00">› </span>ALUMNOS</a>
+						<ul>
+						  <li><a href="#"><p align=left>ALTA/BAJA/MODIFICA</p></a></li>		  
+						</ul>
+					  </li><?php }					  
+					  if($_SESSION["puesto"]== "MAESTRO"){
+					  ?>
+					  <li><a href="#"><span style="color:#F00">› </span>CONSULTA</a>
+						<ul>
+						  <li><a href="#">GRUPOS</a></li>          						  
+						</ul> 
+					  </li>
+					<?php  }
+					if($_SESSION["usuario"]== "MAESTRO"){?>
+					  <li><a href="marketing.php"><span style="color:#F00">› </span>EVALUACION</a>
+						<ul>
+						  <li><a href="marketing.php">Calificar</a></li>
+						</ul>      
+					  </li>                  
+					  <?php 
+					   } ?>
+					</ul>
+				</div>			
+			<div class="titulos_seccion"><span style="color:#F00">›</span> ALTA ALUMNO</div>
+			<div class="titulos_division"></div>
+			<div class = "campos">
+				<div>  		
+					<label> NOMBRE DEL CURSO:</label>
+					<input type="text" value="" name='nombre' id='nombre' />					
+				</div>																			
+			<div>
+					<label >CURSO:</label>
+			   	    <input type="number" name="grado" min="1"/>
+			</div>
+			<div>
+					<label>OBSERVACIONES:</label><br/>
+					<textarea  name = "observaciones" id = "observaciones" style = "width: 324px; height: 60px;"></textarea>
+			</div>	
+		</div>				
+			<div class="division"></div>
+		
+			<table align="center">
+					<tr>
+					<td><input type="button" class="boton" value="GUARDAR" onclick = validar_rh(); return false;> </td>
+					<td><a href="#"><input  class="boton" value="SALIR"/></a> </td>    
+					<td><input type="button" class="boton" value="ELIMINAR" onclick = eliminarUsuario();> </td>   
+					</tr>
+					</table><br/>			
+		</form>
+		</div>
+		<footer>
+				  <!--  ESTE ES EL FOOTER  -->          	
+		</footer>		
+    </body>
+</html>
